@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rajnigandha Salon & Academy</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.js">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+
+
+<style>
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=date] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=date]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+
+
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="nav-background">
+            <div class="mobile-logo">
+                <img src="./images/rlogo.png" alt="" width="100%" height="50">
+            </div>
+            <div class="mobile-nav">
+                <div class="nav-top">
+                    <ul>
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#ourservices">Our Services</a>
+                        </li>
+                        <li>
+                            <a href="#aboutus">About us</a>
+                        </li>
+                        <li>
+                            <a href="#reviews">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#founder">Founder</a>
+                        </li>
+                        <li>
+                            <a href="#contactus">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact flex items-center">
+                    <img src="./icons/phone.svg" alt="">
+                    <div>
+                        <h5>Call us: (+91) 9011391575</h5>
+                        <h6>E-mail : bharatikamble1981@gmail.com</h6>
+                    </div>
+                </div>
+                <div class="time flex items-center">
+                    <img src="./icons/clock.svg" alt="">
+                    <div>
+                        <h5>Working Hours:</h5>
+                        <h6>Mon - Sat (10.00 am - 7.30 pm)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-bar-chart">
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" /></svg>
+            </div>
+            <div class="site-content">
+                <nav>
+                    <div class="top">
+                        <div class="container flex justify-between">
+                            <div class="contact flex items-center">
+                                <img src="./icons/phone.svg" alt="">
+                                <div>
+                                    <h5>Call us: (+91) 9011391575</h5>
+                                    <h6>E-mail : bharatikamble1981@gmail.com</h6>
+                                </div>
+                            </div>
+                            <div class="branding">
+                                <img src="./images/rlogo.png" alt="" width="100%" height="100">
+                            </div>
+                            <div class="time flex items-center">
+                                <img src="./icons/clock.svg" alt="">
+                                <div>
+                                    <h5>Working Hours:</h5>
+                                    <h6>Mon - Sat (10.00 am - 7.30 pm)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar magic-shadow">
+                        <div class="container flex justify-center">
+                            <a href="#home" class="active">Home</a>
+                            <a href="#ourservices">Our Services</a>
+                            <a href="#aboutus">About us</a>
+                            <a href="#reviews">Reviews</a>
+                            <a href="#founder">Founder</a>
+                            <a href="#contactus">Contact us</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <header class="hero flex items-center" id="home">
+                    <div class="container">
+                        <div class="welcome flex items-center">
+                            <span>ENJOY THE SOOTHING EXPERIENCE!</span>
+                        </div>
+                        <h1>ESSENCE<br>OF NATURAL<br><span>BEAUTY</span></h1>
+                        <div>
+                            <button class="btn btn-primary" class="open-button" onclick="openForm()">Book Appointment</button>
+                                <div class="form-popup" id="myForm">
+                                      <form action="/action_page.php" class="form-container">
+                                        <h1 style="color: black; font-family:"Raleway-semibold";">Login</h1>
+                                        <hr>
+
+                                        <label for="email" style="color: black; font-family:"Raleway-semibold";"><b>Full Name</b></label>
+                                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                                        <label for="date" style="color: black; font-family:"Raleway-semibold";"><b>Date</b></label>
+                                        <input type="date" name="date" required>
+
+                                        <button type="submit" class="btn">Submit</button>
+                                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                      </form>
+                                    </div>
+
+                                    <script>
+                                    function openForm() {
+                                      document.getElementById("myForm").style.display = "block";
+                                    }
+
+                                    function closeForm() {
+                                      document.getElementById("myForm").style.display = "none";
+                                    }
+                                    </script>
+                            <a href="#contactus"><button class="btn btn-secondary">Contact Us</button></a>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="top-products" id="ourservices">
+                    <div class="container">
+                        <h1 class="section-heading">Our Services</h1>
+                                    <div class="wrapper">
+         <div class="box">
+            <div class="front-face">
+               <span><img src="./images/facial.jpg" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Facial</span>
+               <p>
+                  <ul>
+                      <li>Gold Facial</li>
+                      <li>Diamond Facial</li>
+                      <li>Fruit Fcial</li>
+                      <li>D Tan Facial</li>
+                      <li>Charcoal Facial</li>
+                  </ul>
+               </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <span><img src="./images/makeup.png" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Makeup</span>
+               <p>
+                  <ul>
+                      <li>HD Makeup</li>
+                      <li>Matte Makeup</li>
+                      <li>Mineral Makeup</li>
+                      <li>Smokey Makeup</li>
+                      <li>Natural Minimal Makeup</li>
+                  </ul>
+               </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <span><img src="./images/manucure.jpg" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Menicure Pedicure</span>
+               <p>
+                  <ul>
+                      <li>Basic manicure or pedicure</li>
+                      <li>French manicure or pedicure</li>
+                      <li>Reverse French manicure or pedicure</li>
+                      <li>American manicure or pedicure</li>
+                      <li>Gel manicure or pedicure</li>
+                  </ul>
+               </p>
+
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon">
+                  <i class="fas fa-rocket"></i>
+               </div>
+               <span><img src="./images/haircutt.jpg" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Haircut</span>
+               <p>
+                  <ul>
+                      <li>Blunt Bob</li>
+                      <li>Layer Cut</li>
+                      <li>Modern Mullet</li>
+                      <li>Smooth Lob</li>
+                      <li>Sleek and Straight</li>
+                  </ul>
+               </p>
+               
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon">
+                  <i class="fas fa-rocket"></i>
+               </div>
+               <span><img src="./images/hairspa.jpg" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Hair Spa</span>
+               <p>
+                  <ul>
+                      <li>Hair Spa for Dandruff</li>
+                      <li>Hair Spa for Hair Fall</li>
+                      <li>Hair Spa Treatment for Itchy Scalp</li>
+                      <li>Hair Spa Treatment for Coloured Hair</li>
+                      <li>Hair Smoothening Spa Treatment</li>
+                  </ul>
+               </p>
+               
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon">
+                  <i class="fas fa-rocket"></i>
+               </div>
+               <span><img src="./images/massage.jpg" width="100%" height="220" style="border:1px solid black;"></span>
+            </div>
+            <div class="back-face">
+               <span>Massage</span>
+               <p>
+                  <ul>
+                      <li>Hot stone massage</li>
+                      <li>Aromatherapy massage</li>
+                      <li>Sports massage</li>
+                      <li>Smooth Lob</li>
+                      <li>Trigger point massage</li>
+                  </ul>
+               </p>
+               
+            </div>
+         </div>
+      </div>
+                        <div class="text-center btn-wrapper">
+                            <button class="btn btn-secondary">View More</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="about-meal" id="aboutus">
+                    <div class="container">
+                        <h1 class="section-heading">About Us</h1>
+                        <div class="about-meal-wrap flex">
+                            <div class="flex-1">
+                                <img src="./images/aboutus.jpg" alt="about us">
+                            </div>
+                            <div class="flex-1">
+                                <h2>INTRODUCING OUR ICONIC RAJNIGANDHA SALON</h2>
+                                <p>Rajnigandha Salon and Academy is a full service women’s hair salon located in Wardha, Maharashtra, India.
+
+                                <p>Our professional team is current with all the latest styles and trends to provide you with your best look. We specialize in Deva cuts, single-process color, highlighting, and Pintura. Stop in to schedule a consultation or book online today!</p>
+
+                                <p>We strive for the highest quality of service, while maintaining a fun, friendly, non-pretentious environment.</p>
+                                <button class="btn btn-secondary">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container">
+            <div class="veiw-box">
+            
+
+            <div class="controls">
+                <span id="control1"></span>
+                <span id="control2" class="active"></span>
+                <span id="control3"></span>
+            </div>
+            
+            </div>
+            
+
+            </div>
+                <section class="latest-news" id="reviews">
+                    <div class="container">
+                        <h1 class="section-heading">Reviews</h1>
+                        <div class="article-wrapper">
+                            <article class="card magic-shadow-sm">
+                                <div>
+                                    <center><img src="./images/r1.png" alt=""></center>
+                                </div>
+                                <div class="card-content">
+                                    <center><h2>Person 1</h2></center>
+                                    <div class="post-meta flex items-center justify-between">
+                                        <div>&#11088; &#11088; &#11088; &#11088; &#11088;</div>
+                                    </div>
+                                    <p>Easy appointments, welcoming staff, and talented employees! I was thrilled with my eyebrow wax, and bang trim. I will be back for more services!</p>
+                                </div>
+                            </article>
+                            <article class="card magic-shadow-sm">
+                                <div>
+                                    <center><img src="./images/r2.png" alt=""></center>
+                                </div>
+                                <div class="card-content">
+                                    <center><h2>Person 2</h2></center>
+                                    <div class="post-meta flex items-center justify-between">
+                                        <div>&#11088; &#11088; &#11088; &#11088; &#11088;</div>
+                                    </div>
+                                    <p>Great haircuts, fantastic services, love the atmosphere, nothing but a good afternoon.The hot stone massage is my favorite part of the spa pedicure. </p>
+                                </div>
+                            </article>
+                            <article class="card magic-shadow-sm">
+                                <div>
+                                    <center><img src="./images/r3.png" alt=""></center>
+                                </div>
+                                <div class="card-content">
+                                    <center><h2>Person 3</h2></center>
+                                    <div class="post-meta flex items-center justify-between">
+                                        <div>&#11088; &#11088; &#11088; &#11088; &#11088;</div>
+                                    </div>
+                                    <p> This is the only salon that I trust to properly deal with my hair. Their extensive knowledge and skill are truly unmatched.The salon is beautiful.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="text-center btn-wrapper">
+                            <button class="btn btn-secondary">View All</button>
+                        </div>
+                        <div class="subscribe" style="margin-top: 1rem;">
+                            <div class="input-wrap">
+                                <input type="email" placeholder="Write your reviews here">
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="subscribe" id="founder">
+                    <h1 class="section-heading">Meet Our Founder</h1>
+                    <div class="container flex items-center">
+                        <div>
+                            <img src="./images/ig1.jpg" alt="Founder">
+                        </div>
+                        <div>
+                            <h1>Mrs. Bharti Kamble</h1>
+                            <p>Founder- Rajnigandha Salon & Academy</p>
+                            <p>Bharti Kamble is founder of Rajnigandha salon and academy, who has 40 years of experience in salons. Although much of her role entails overseeing the salon, she has a passion for hair styling, and takes into account the demands of modern women’s lifestyles, along with the need for low-maintenance, easy management and versatility. She has a particular passion for giving more mature women a modern style that can reflect their true confidence, allowing them to look chic, yet youthful.</p>
+                            <p>
+                                <ul>
+                                    <li>Award</li>
+                                    <li>Award</li>
+                                    <li>Award</li>
+                                    <li>Award</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact-us flex" id="contactus">
+                    <div class="contact-info-wrapper">
+                        <h1 class="section-heading">Contact us</h1>
+                        <div class="contact-info">
+                            <div>
+                                <div>
+                                    <img src="./icons/phone-2.svg" alt="">
+                                    <div>
+                                        <span>Call us:</span>
+                                        <span>(+91) 9011391575</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="./icons/email.svg" alt="">
+                                    <div>
+                                        <span>Address :</span>
+                                        <span>Giripeth, Arvi Road, Wardha- 442001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="./icons/clock-2.svg" alt="">
+                                    <div>
+                                        <span>Working Hours:</span>
+                                        <span>Mon - Sat (10.00 am - 7.30 pm)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29846.957538397626!2d78.59919579129166!3d20.75607502675182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47ee2e0d6a2ad%3A0x743ecc483051c409!2sRajanigandha%20Beauty%20Care!5e0!3m2!1sen!2sin!4v1622309616102!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="container">
+                        <div class="box">
+                            <h3>About us</h3>
+                            <p style="text-align: justify;">Rajnigandha Salon & Academy was started in 2003 and andprovides range of skin and hair care services in Wardha, Maharashtra</p>
+
+
+                        </div>
+                        <div class="box">
+                            <h3>Quik Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="#home">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#aboutus">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#ourservices">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#reviews">Reviews</a>
+                                </li>
+                                <li>
+                                    <a href="#founder">Founder</a>
+                                </li>
+                                <li>
+                                    <a href="#contactus">Contact us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="open-button" onclick="openForm()"><b>Appointment</b></a>
+                                </li>
+                                <div class="form-popup" id="myForm">
+                                  <form action="/action_page.php" class="form-container">
+                                    <h1 style="color: black; font-family:"Raleway-semibold";">Login</h1>
+                                    <hr>
+
+                                    <label for="email" style="color: black; font-family:"Raleway-semibold";"><b>Full Name</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                                    <label for="date" style="color: black; font-family:"Raleway-semibold";"><b>Date</b></label>
+                                    <input type="date" name="date" required>
+
+                                    <button type="submit" class="btn">Submit</button>
+                                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                  </form>
+                                </div>
+
+                                <script>
+                                function openForm() {
+                                  document.getElementById("myForm").style.display = "block";
+                                }
+
+                                function closeForm() {
+                                  document.getElementById("myForm").style.display = "none";
+                                }
+                                </script>
+                                <li>
+                                    <a href="Payment/index.html"><b>Payment</b></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <h3>Follow Us</h3>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <a href="https://rajanigandha_salon.wardha/">
+                                            <img src="./icons/facebook.svg" alt="">
+                                            <span>Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/rajanigandha_salon.wardha/">
+                                            <img src="./icons/instagram.svg" alt="">
+                                            <span>Instagram</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box instagram-api">
+                            <h3>Instagram</h3>
+                            <div class="post-wrap">
+                                <div>
+                                    <img src="./images/ig1.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                                <div>
+                                    <img src="./images/ig2.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                                <div>
+                                    <img src="./images/ig3.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                                <div>
+                                    <img src="./images/ig4.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                                <div>
+                                    <img src="./images/ig5.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                                <div>
+                                    <img src="./images/ig6.jpg" alt="" style="border:1px solid yellow;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <footer class="copyright">
+                    <div>
+                        Copyright © 2021 .All rights reserved by <a href="https://www.instagram.com/rajanigandha_salon.wardha/">Rajnigandha Salon and Academy</a>.
+                    </div> 
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
